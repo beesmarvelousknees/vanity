@@ -52,13 +52,17 @@ Where the first 3 chars are always 'bc1' and the address length is 42 chars.
 Those numbers are the total number of possible strings of length $vanity\_length$. So if you exhausted the set, you would be guaranteed to find your vanity address. 
 
 It's intuitive to imagine that we should, on average, find our vanity address before exhausting the entire set, maybe in the middle on average, and so the probability should be:
-$$
+
+```math
 (32^{vanity\_length}+1) / 2
-$$
+```
+
 Don't forget, we are generating random addresses, so we may generate the same address twice, or more times, before exhausing the set. It turns out then that the probability of finding our vanity address is actually:
-$$
+
+```math
 32^{vanity\_length}
-$$
+```
+
 Since we don't eliminate missed guesses, and past guesses remain in the possible next guess pool, so to speak, the probability of finding our vanity address doesn't change with successive guesses. It's always the same one-in-whatever odds.
 
 #### Guessing While Avoiding Repetition - Probability
