@@ -12,8 +12,9 @@ On a mini PC, I let this run for a few weeks at around 20% CPU usage and found 3
 
 ## How to Run
 
-1) In `vanity.py` add your desired vanity suffix(es) to the 'vanities' list. **I recommend a vanity suffix of 5 chars or less**. See below for details.
-2) In `vanity.py` adjust the input of time.sleep() to make your CPU work harder or less hard.
+1) Use `has_valid_chars.py` to ensure that your desired suffix is made of valid characters supported by the bech32 address specification. You don't want to waste a bunch of compute looking for a suffix that is impossible to find.
+2) In `vanity.py` add your desired vanity suffix(es) to the 'vanities' list. **I recommend a vanity suffix of 5 chars or less**. See below for details.
+3) In `vanity.py` adjust the input of time.sleep() to make your CPU work harder or less hard.
 
 ```python
 python -m venv .env
