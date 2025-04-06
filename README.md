@@ -4,9 +4,9 @@ Generates a vanity Bitcoin address in bech32 segwit format.
 
 Examples:
 
-- bc1qzvs8ukd9ugcfuyuvg2cpgxtjvvk09qn0zsammy
-- bc1qcg49knvsn0kleclkdt4tm0z2h9g7z7q7dsammy
-- bc1q3klzv7a34rq8hggufymgxwddkxedd59mmsammy
+- `bc1qzvs8ukd9ugcfuyuvg2cpgxtjvvk09qn0zsammy`
+- `bc1qcg49knvsn0kleclkdt4tm0z2h9g7z7q7dsammy`
+- `bc1q3klzv7a34rq8hggufymgxwddkxedd59mmsammy`
 
 On a mini PC, I let this run for a few weeks at around 20% CPU usage and found 3 addresses. It randomly generates private keys, and the associated Bitcoin address, and checks whether it ends with your vanity suffix. That's it, that's all.
 
@@ -32,7 +32,7 @@ python count.py
 
 ## Likelihood of Finding a Vanity Address
 
-##### Random Guess with Repetition - Probability
+#### Random Guess with Repetition - Probability
 
 To calculate combinations with repetition we would do $possible\_chars^{vanity\_length}$. A bech32 address is made by selecting from 32 possible chars, and then we choose our desired vanity length. 
 
@@ -61,7 +61,7 @@ $$
 $$
 Since we don't eliminate missed guesses, and past guesses remain in the possible next guess pool, so to speak, the probability of finding our vanity address doesn't change with successive guesses. It's always the same one-in-whatever odds.
 
-##### Guessing While Avoiding Repetition - Probability
+#### Guessing While Avoiding Repetition - Probability
 
 First let's remind ourselves that we are randomly generating 256 bit private keys. From each of these we generate a corresponding bech32 address. It will be the case that various private keys produce the same address suffix that is not our target suffix. Unfortunately there's nothing we can do to avoid those repeat guesses. The only thing that we control, the random private key selection, is already guaranteed to never produce the same key twice because the key space is massive. What addresses these produce are unknown until we try it. Point being, when you randomly generate an address, and the suffix space is small enough that suffix collisions are possible, there's nothing you can do to prevent suffix collisions, you can only continue making random guesses.
 
