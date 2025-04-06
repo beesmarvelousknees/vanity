@@ -34,7 +34,7 @@ python count.py
 
 #### Random Guess with Repetition - Probability
 
-To calculate combinations with repetition we would do $possible\_chars^{vanity\_length}$. A bech32 address is made by selecting from 32 possible chars, and then we choose our desired vanity length. 
+To calculate combinations with repetition we would do $possible<span>_</span>chars^{vanity<span>_</span>length}$. A bech32 address is made by selecting from 32 possible chars, and then we choose our desired vanity length. 
 
 - $32^{1}$ =  32
 - $32^2 = 1024$
